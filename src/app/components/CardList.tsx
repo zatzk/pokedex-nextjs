@@ -23,15 +23,15 @@ export function CardList({ formData }) {
   }
   const res =
       {
-        id: data.id,
-        name: data.name,
-        type: data.types?.[0]?.type?.name ?? "normal",
-        image: data.sprites?.other?.home?.front_default || "DefaultImageURL",
+        id: data.id ?? 1,
+        name: data.name ?? "bulbasaur",
+        type: data.types?.[0]?.type?.name ?? "grass",
+        image: data.sprites?.other?.home?.front_default ?? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png",
         status: {
-          hp: data.stats?.[0]?.base_stat ?? 0,
-          attack: data.stats?.[1]?.base_stat ?? 0,
-          defense: data.stats?.[2]?.base_stat ?? 0,
-          speed: data.stats?.[5]?.base_stat ?? 0,
+          hp: data.stats?.[0]?.base_stat ?? 45,
+          attack: data.stats?.[1]?.base_stat ?? 49,
+          defense: data.stats?.[2]?.base_stat ?? 49,
+          speed: data.stats?.[5]?.base_stat ?? 45,
         },
         moves: [
           data.moves?.[0]?.move?.name ?? "No move",
