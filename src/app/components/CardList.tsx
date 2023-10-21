@@ -4,7 +4,7 @@ import { Cards } from "./Cards";
 
 
 
-export function CardList({ formData }) {
+export function CardList({ formData, isCardHidden }) {
   console.log(formData)
   const [{ data, loading, error }] = useAxios<any>({
     baseURL: "https://pokeapi.co/api/v2/",
@@ -44,7 +44,7 @@ export function CardList({ formData }) {
   // console.log(res);
 
   return (
-    <div id="cardList">
+    <div id="cardList" className={isCardHidden ? "hidden" : ""}>
       <Cards 
         data={res}
       />
